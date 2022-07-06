@@ -1,0 +1,31 @@
+.default-button
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 20px
+  background: $gold
+  transition: background .3s ease-in-out
+  @media (any-hover: hover)
+    &:hover
+      background: $brown
+      .default-button__title
+        color: $gold
+      svg
+        path 
+          fill: $gold
+
+.default-button__title
+  font-size: 12px
+  line-height: 14px
+  font-weight: 700
+  text-transform: uppercase
+  color: $brown
+  text-align: center
+  transition: color .3s ease-in-out
+
+.default-button__icon--wrapper
+  display: block
+  margin-left: 10px
+  svg
+    path 
+      transition: fill .3s ease-in-out

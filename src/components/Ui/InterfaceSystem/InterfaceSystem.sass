@@ -1,0 +1,35 @@
+.page-wrapper
+  width: 100%
+  max-width: $page-wrapper
+  margin: 0 auto
+
+.content-wrapper
+  width: 100%
+  max-width: $page-wrapper
+  margin: 0 auto
+  padding: 0 8%
+  @include media-breakpoint-down(xl)
+    padding: 0 4%
+  @include media-breakpoint-down(lg)
+    padding: 0 8%
+  @include media-breakpoint-down(md)
+    padding: 0 6%
+  @include media-breakpoint-down(sm)
+    padding: 0 20px
+
+.section
+  padding: 90px 0
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 45px + (90 - 45) * ((100vw - 320px) / (1440 - 320))) 0
+
+
+.stiky-grid
+  display: grid
+  grid-template-columns: minmax(0, 4fr) 8fr
+  grid-template-rows: 1fr
+  @include media-breakpoint-down(lg)
+    grid-template-columns: minmax(0, 1fr)
+
+.stiky-grid__column
+  position: relative
+  width: 100%

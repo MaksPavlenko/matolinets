@@ -1,0 +1,7 @@
+@import './PhoneInfo/PhoneInfo'
+
+.fund-phone__wrapper
+  position: relative
+  padding: 160px 0
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 40px + (160 - 40) * ((100vw - 320px) / (1440 - 320))) 0

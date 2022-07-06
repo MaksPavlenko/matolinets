@@ -1,9 +1,10 @@
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap')
 
 /////// FONTS ////////
 
 
-$main: 'Roboto', sans-serif
+// $main: 'Avanti-example', sans-serif
+$main: 'Manrope', sans-serif
 
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
@@ -12,36 +13,31 @@ $main: 'Roboto', sans-serif
 		font-weight: $fweight
 		src: local($fname), url($furl) format('woff')
 		font-display: swap // Uncomment to initially display system fonts
-@include font('Roboto-example', normal, 300, '../fonts/Roboto-Light/Roboto-Light.woff2')
-@include font('Roboto-example', normal, 400, '../fonts/Roboto-Regular/Roboto-Regular.woff2')
-@include font('Roboto-example', normal, 500, '../fonts/Roboto-Medium/Roboto-Medium.woff2')
-@include font('Roboto-example', normal, 700, '../fonts/Roboto-Bold/Roboto-Bold.woff2')
+// @include font('Roboto-example', normal, 300, '../fonts/Roboto-Light/Roboto-Light.woff2')
+@include font('Avanti-example', normal, 400, '../fonts/Avanti-Regular/Avanti-Regular.woff2')
+// @include font('Roboto-example', normal, 500, '../fonts/Roboto-Medium/Roboto-Medium.woff2')
+@include font('Avanti-example', normal, 700, '../fonts/Avanti-Bold/Avanti-Bold.woff2')
 
 ///////  COLORS ///////
 
-// $black: #2c2c2c
-$black: #000
-$gray: #9c9c9c
-$white: #fff
-$border: rgba($black, .15)
+$black: #212529
+$gray: #f5f5f5
+$white: #ffffff
+$gold: #EFD39B
+$brown: #403935
+
+$gr_gold: linear-gradient(180deg, #AF8B5F 0%, #EFD39B 100%)
 
 //////// BORDERS ///////
 
-$solid: 1px solid $border
 
 
 //////// SIZES ///////
 
-$page-wrapper: 1200px
+$page-wrapper: 1920px
 
 //////// TRANSITIONS ///////
 
 $cubic: cubic-bezier(0.24, 0.4, 0, 1)
 
 //////// STYLE MIXINS /////////
-
-@mixin flex-center()
-  display: flex
-  align-items: center
-  justify-content: center
-

@@ -1,26 +1,18 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
 import useScroll from '../../../hooks/useScroll';
 
-import HeaderLogo from './HeaderLogo/HeaderLogo';
-import HeaderMenu from './HeaderMenu/HeaderMenu';
+import { ContentWrapper } from '../../Ui/InterfaceSystem/InterfaceSystem';
+import { HeaderLogo, HeaderLogoFund } from './HeaderLogo/HeaderLogo';
+import NavigationLeft from './Navigation/NavigationLeft';
+import NavigationRight from './Navigation/NavigationRight';
 import Burger from './Burger/Burger';
-import Navigation from './Navigation/Navigation';
+import NavigationMobile from './NavigationMobile/NavigationMobile';
 
-const Header = ({ menu }) => {
-  const [activeHeader, setActiveHeader] = React.useState(false);
-
+const Header = ({ cls, menu }) => {
   const [open, setOpen] = React.useState(false);
-
-  function openMenu() {
-    setOpen(!open);
-  }
-
-  function closeMenu() {
-    setOpen(false);
-  }
-
-  
+  const [activeHeader, setActiveHeader] = React.useState(false);
 
   const changePosition = 60;
   let scroll = useScroll();
@@ -33,18 +25,48 @@ const Header = ({ menu }) => {
     setActiveHeader(false);
   }
 
+  function openMenu() {
+    setOpen(!open);
+  }
+
+  React.useEffect(() => {
+    open
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'visible');
+  }, [open]);
+
   return (
     <>
-    <header className={activeHeader ? 'header is-active' : 'header'}>
-      <Burger openMenu={openMenu} />
-      <div className="page-wrapper">
-        <div className="header-container">
-          <HeaderLogo />
-          <HeaderMenu menu={menu}  />
-        </div>
-      </div>
-    </header>
-    <Navigation menu={menu} closeMenu={closeMenu} open={open} />
+      <header
+        className={
+          cls === 'fund'
+            ? `header header-fund ${activeHeader ? 'is-active' : ''}`
+            : 'header'
+        }
+      >
+        <ContentWrapper>
+          <div className="header-content">
+            <MediaQuery minWidth={992}>
+              <NavigationLeft menu={menu} />
+            </MediaQuery>
+            {cls === 'fund' ? (
+              <HeaderLogoFund open={open} activeHeader={activeHeader} />
+            ) : (
+              <HeaderLogo open={open} />
+            )}
+
+            <MediaQuery minWidth={992}>
+              <NavigationRight menu={menu} />
+            </MediaQuery>
+            <MediaQuery maxWidth={991}>
+              <Burger openMenu={openMenu} open={open} />
+            </MediaQuery>
+          </div>
+        </ContentWrapper>
+      </header>
+      <MediaQuery maxWidth={991}>
+        <NavigationMobile menu={menu} open={open} />
+      </MediaQuery>
     </>
   );
 };

@@ -1,0 +1,41 @@
+.prise-list
+  margin-top: 30px
+
+.prise-list__item
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  padding: 20px
+  margin-bottom: 20px
+  border: 1px solid $gold
+  &:last-child
+    margin-bottom: 0
+  @include media-breakpoint-down(md)
+    flex-direction: column
+    justify-content: flex-start
+  &.prise-list__item--accent
+    background: $brown
+    color: $gold
+
+
+.prise-list__item--title
+  font-size: 14px
+  line-height: 110%
+  font-weight: 400
+  text-transform: uppercase
+  flex-basis: 70%
+  @include media-breakpoint-down(md)
+    font-size: 12px
+    flex-basis: 100%
+
+.prise-list__item--count
+  font-size: 14px
+  line-height: 110%
+  font-weight: 400
+  flex-basis: 25%
+  text-align: right
+  @include media-breakpoint-down(md)
+    margin-top: 5px
+    flex-basis: 100%
+
+

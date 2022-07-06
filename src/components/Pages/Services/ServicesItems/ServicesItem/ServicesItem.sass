@@ -1,0 +1,64 @@
+.services-item
+  background: $brown
+  padding: 30px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  grid-area: a
+  @include media-breakpoint-down(lg)
+    grid-area: auto
+  &:nth-child(2)
+    grid-area: b
+    @include media-breakpoint-down(lg)
+      grid-area: auto
+  &:nth-child(3)
+    grid-area: c
+    @include media-breakpoint-down(lg)
+      grid-area: auto 
+  &:last-child
+    grid-area: d
+    @include media-breakpoint-down(lg)
+      grid-area: auto
+
+
+.services-item__title
+  font-size: 24px
+  line-height: 120%
+  font-weight: 500
+  text-transform: uppercase
+  color: $gold
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 12px + (24 - 12) * ((100vw - 320px) / (1440 - 320))) 
+
+.services-item__image
+  display: block
+  width: 40px
+  height: 40px
+  &.services-item__image--category
+    width: 60px
+    height: 60px
+    @include media-breakpoint-down(lg)
+      width: 40px
+      height: 40px
+
+
+.services-category
+  margin-top: 20px
+
+.services-category__item
+  margin-bottom: 8px
+  &:last-child
+    margin-bottom: 0
+
+.services-category__link
+  @media (any-hover: hover)
+    &:hover
+      .services-category__title
+        color: #9f9191
+
+.services-category__title
+  font-size: 14px
+  line-height: 120%
+  font-weight: 400
+  color: $gold
+  transition: color .3s ease-in-out

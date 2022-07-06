@@ -1,0 +1,16 @@
+.section-header
+  text-align: center
+  padding-bottom: 100px
+  @media screen and ( max-width: $page-wrapper )
+    padding-bottom: calc( 50px + (100 - 50) * ((100vw - 320px) / (1440 - 320)))
+
+.section-title
+  display: inline-block
+  font-size: 30px
+  line-height: 110%
+  font-weight: 600
+  text-transform: uppercase
+  color: $brown
+  white-space: pre-wrap
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 22px + (30 - 22) * ((100vw - 320px) / (1440 - 320)))

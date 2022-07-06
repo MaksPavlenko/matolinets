@@ -1,0 +1,17 @@
+@import './ServicesItem/ServicesItem'
+
+.services-page__items
+  display: grid
+  grid-template-columns: repeat(3, 4fr)
+  grid-template-areas: "a b c" "d d d"
+  gap: 40px
+  @include media-breakpoint-down(xl)
+    gap: 40px 30px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 1fr
+    grid-template-areas: none
+  @include media-breakpoint-down(sm)
+    gap: 20px
+
+
+    

@@ -1,24 +1,27 @@
 .logo-link
   display: flex
-  flex-basis: 40%
   align-items: center
+  justify-content: center
   cursor: pointer
-  @include media-breakpoint-down(xl)
-    // flex-basis: 45%
-  @media screen and (max-width: 1120px)
-    display: none
+  transition: opacity .3s ease-in-out
+  pointer-events: auto
+  &.is-hide
+    opacity: 0
+    pointer-events: none
 
-.logo-link--mob
-  display: none
-  @media screen and (max-width: 1120px)
-    display: flex
-    flex-basis: 100%
-    margin: 0 auto
-    align-items: center
-    justify-content: center
-    cursor: pointer
-    width: 100%
-    letter-spacing: .03em
-    font-size: 16px
-    color: #000
-    font-weight: 600
+
+.logo
+  display: block
+  width: 140px
+  height: auto
+  transition: transform .3s ease-in-out
+  &.logo-fund
+    width: 180px
+    transform-origin: top
+    transform: scale(1.615)
+    @include media-breakpoint-down(lg)
+      transform: scale(1)
+  &.is-active
+    transform: scale(1)
+
+

@@ -1,0 +1,82 @@
+.fund-about__item
+  background: $brown
+  padding: 70px
+  &:first-child
+    background: $gr_gold
+  &:last-child
+    background: $gr_gold
+    @include media-breakpoint-down(md)
+      background: $brown
+  @include media-breakpoint-down(md)
+    &:nth-child(odd)
+      background: $gr_gold
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 30px + (70 - 30) * ((100vw - 320px) / (1440 - 320))) 
+
+
+.fund-about__item
+  &:first-child
+    .fund-about__item--descr
+      color: $brown
+    .fund-about__item--title
+      color: $brown
+  &:nth-child(2)
+    .fund-about__item--descr
+      color: $gold
+    .fund-about__item--title
+      color: $gold
+      background: $gr_gold
+      background-clip: text
+      text-fill-color: transparent
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+  &:nth-child(3)
+    .fund-about__item--descr
+      color: $gold
+      @include media-breakpoint-down(md)
+        color: $brown
+    .fund-about__item--title
+      color: $gold
+      background: $gr_gold
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-clip: text
+      text-fill-color: transparent     
+      @include media-breakpoint-down(md)
+        color: $brown
+        -webkit-text-fill-color: $brown
+        text-fill-color: $brown
+  &:last-child
+    .fund-about__item--descr
+      color: $brown
+      @include media-breakpoint-down(md)
+        color: $gold
+    .fund-about__item--title
+      color: $brown
+      @include media-breakpoint-down(md)
+        color: $gold
+        background: $gr_gold
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        background-clip: text
+        text-fill-color: transparent
+
+
+.fund-about__item--title
+  font-size: 22px
+  line-height: 110%
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 20px
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 16px + (22 - 16) * ((100vw - 320px) / (1440 - 320))) 
+  @include media-breakpoint-down(md)
+    margin-bottom: 10px
+
+.fund-about__item--descr
+  font-size: 15px
+  line-height: 130%
+  font-weight: 400
+  white-space: pre-wrap
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 14px + (15 - 14) * ((100vw - 320px) / (1440 - 320))) 

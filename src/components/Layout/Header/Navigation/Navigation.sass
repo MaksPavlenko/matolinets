@@ -1,68 +1,12 @@
-.navigation-mob
-  display: none
-  @media screen and (max-width: 1120px)
-    display: block
-    background: $white
-    width: 100%
-    position: fixed
-    top: 50px
-    bottom: 0
-    left: 0
-    padding: 10vh 0
-    width: 100%
-    color: #000
-    opacity: 0
-    transition: all 0.4s ease
-    transform: translateX(-140%)
-    z-index: 10
-    &.is-open
-      transform: translateX(0)
-      opacity: 1
-      overflow: scroll
+@import './NavigationSystem/NavigationSystem'
 
-.navigation_mob-wrapper
-  width: 100%
-  flex-direction: column
-  justify-content: space-around
-  @include flex-center()
+.navigation
+  display: flex
+  align-items: center 
 
-.navigation_mob-list
-  // height: 60%
-
-.navigation_mob-item
-  @include flex-center()
-
-.navigation_mob-link
-  font-size: 32px
-  letter-spacing: .12em
-  font-weight: 500
-  line-height: 96px
-  color: $black
-  text-transform: uppercase
-  &:hover
-    color: #5b5b5b
-  &:focus
-    color: #5b5b5b 
-
-.navigation-mob 
-  .language
-    display: flex
-    flex-direction: column
-
-  .language-item
-    margin-left: 0
-    @include flex-center()
-
-  .language-item__link
-    &:hover
-      .language-item__title
-        color: #5b5b5b
-
-  .language-item__title
-    font-size: 20px
-    letter-spacing: .12em
-    font-weight: 500
-    color: $black
-    line-height: 50px !important
-
+.navigation-left
+  justify-content: flex-start
+  
+.navigation-right
+  justify-content: flex-end
 

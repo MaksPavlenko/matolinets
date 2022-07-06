@@ -1,17 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby-plugin-react-i18next';
 
-import Logo from '../../../../svg/logo.svg';
+import Logo from '../../../../svg/logo_main.svg';
+import LogoFund from '../../../../svg/logo-big.svg';
 
-const HeaderLogo = () => (
-  <>
-    <Link to="/" className="logo-link">
-      <Logo className="logo" />
-    </Link>
-    <Link to="/" className="logo-link--mob">
-      <div className="logo--mob">nunox</div>
-    </Link>
-  </>
+export const HeaderLogo = ({ open }) => (
+  <Link to="/" className={open ? 'logo-link is-hide' : 'logo-link'}>
+    <Logo className="logo logo-main" />
+  </Link>
 );
 
-export default HeaderLogo;
+export const HeaderLogoFund = ({ open, activeHeader }) => (
+  <Link
+    to="/"
+    className={
+      open ? 'logo-link logo-link__fund is-hide' : 'logo-link__fund logo-link'
+    }
+  >
+    <LogoFund
+      className={activeHeader ? 'logo logo-fund is-active' : 'logo logo-fund'}
+    />
+  </Link>
+);
+
+// export default HeaderLogo;

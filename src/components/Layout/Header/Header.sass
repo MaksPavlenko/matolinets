@@ -1,25 +1,24 @@
 @import './HeaderLogo/HeaderLogo'
-@import './HeaderMenu/HeaderMenu'
-@import './Burger/Burger'
 @import './Navigation/Navigation'
-
-.header
-  width: 100%
-  position: fixed
-  top: 0
-  left: 0
-  &.is-active
-    background: $white
-    z-index: 10
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13)
-    transition: box-shadow .3s cubic-bezier(0.24, 0.4, 0, 1) .3s
-    
-
-.header-container
-  width: 100%
-  display: flex
-  height: 100px
-  @media screen and (max-width: 1120px)
-    height: 50px
+@import './NavigationMobile/NavigationMobile'
+@import './Burger/Burger'
   
+.header
+  position: fixed
+  width: 100%
+  background: $brown
+  z-index: 100
+  transition: background .3s ease-in-out
+  &.header-fund
+    background: transparent
+  &.is-active
+    background: $brown
 
+.header-content
+  position: relative
+  width: 100%
+  height: 100px
+  display: grid
+  grid-template-columns: 5fr 2fr 5fr
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 1fr

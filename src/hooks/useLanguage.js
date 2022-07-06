@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { I18nContext } from 'gatsby-plugin-react-i18next';
 
-export const useLanguage = (ukr, eng, itl, rus) => {
+export const useLanguage = (ukr, eng, de, rus) => {
   const {
     i18n: { language },
   } = useContext(I18nContext);
@@ -10,8 +10,8 @@ export const useLanguage = (ukr, eng, itl, rus) => {
     return ukr;
   } else if (language === 'ru') {
     return rus;
-  } else if (language === 'it') {
-    return itl;
+  } else if (language === 'de') {
+    return de;
   } else {
     return eng;
   }

@@ -1,0 +1,54 @@
+.fund-phone__info--wrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  
+.fund-phone__info
+  position: relative
+  width: 680px
+  text-align: center
+  padding: 50px 70px
+  background: rgba(235, 235, 235, 0.35)
+  backdrop-filter: blur(10px)
+  @media screen and ( max-width: $page-wrapper )
+    width: calc( 280px + (680 - 280) * ((100vw - 320px) / (1440 - 320)))
+  @include media-breakpoint-down(md)
+    width: 100%
+    padding: 50px 30px
+  @include media-breakpoint-down(sm)
+    padding: 30px 20px
+
+.fund-phone__info--title
+  font-size: 18px
+  line-height: 110%
+  font-weight: 700
+  text-transform: uppercase
+  color: $gold
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 14px + (18 - 14) * ((100vw - 320px) / (1440 - 320)))
+
+.fund-phone__info--link
+  display: block
+  font-size: 60px
+  line-height: 100%
+  color: $gold
+  background: $gr_gold
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  text-fill-color: transparent
+  margin: 15px 0 10px 0
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 32px + (60 - 32) * ((100vw - 320px) / (1440 - 320)))
+
+.fund-phone__info--descr
+  font-size: 14px
+  font-weight: 400
+  line-height: 120%
+  color: $gold
+  padding: 0 16%
+  @include media-breakpoint-down(xl)
+    padding: 0 13%
+  @include media-breakpoint-down(lg)
+    padding: 0 2%

@@ -1,9 +1,9 @@
 const { languages, defaultLanguage } = require('./languages');
 
-require('dotenv').config();
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+// require('dotenv').config();
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// });
 
 module.exports = {
   siteMetadata: {
@@ -26,6 +26,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/documents/`,
       },
     },
     {
@@ -71,7 +78,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`ua`, `en`, `it`, `ru`],
+        languages: [`ua`, `en`, `de`, `ru`],
         defaultLanguage: `ua`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://www.nunox.co`,
@@ -151,18 +158,6 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-sass`,
-
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        downloadLocal: true,
-        spaceId: `3t2awxrtdn10`,
-        // spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: process.env.CONTENTFUL_HOST,
-        // host: `preview.contentful.com`,
-      },
-    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

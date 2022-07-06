@@ -1,0 +1,51 @@
+.default-slider__wrapper
+  overflow: hidden
+  
+.default-slider
+  margin-left: -20px
+  margin-right: -20px
+  @include media-breakpoint-down(xl)
+    margin-left: -10px
+    margin-right: -10px
+  @include media-breakpoint-down(lg)
+    margin-left: -20px
+    margin-right: -20px
+  @include media-breakpoint-down(md)
+    margin-left: -10px
+    margin-right: -10px
+  @include media-breakpoint-down(sm)
+    margin: 0
+  .slick-track
+    display: flex !important
+    align-items: stretch
+    justify-content: flex-start
+  .slick-slide
+    height: auto
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    div
+      &:first-child 
+        height: 100%
+
+.default-slider__navigation
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-areas: ". a ."
+  gap: 40px
+  padding-top: 60px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 1fr
+    grid-template-areas: none
+ 
+
+.default-slider__navigation--buttons
+  align-self: center
+  justify-self: center
+  grid-area: a
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @include media-breakpoint-down(lg)
+    grid-area: auto
+

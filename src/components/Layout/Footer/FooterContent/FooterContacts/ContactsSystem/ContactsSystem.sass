@@ -1,0 +1,19 @@
+.contacts-list
+  transform: translateY(-8px)
+
+.contacts-list__item
+  margin: 7px 0
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+.contacts-list__item--link
+  font-size: 14px
+  line-height: 100%
+  font-weight: 400
+  color: $gold
+  transition: color .3s ease-in-out
+  @media (any-hover: hover)
+    &:hover
+      color: #9f9191

@@ -1,0 +1,41 @@
+.fund-facts__item
+  // display: flex
+  // flex-direction: column
+  // justify-content: space-between
+  background: rgba(235, 235, 235, 0.30)
+  backdrop-filter: blur(10px)
+  padding: 20px 20px 30px 20px
+  @include media-breakpoint-down(md)
+    padding: 30px
+
+
+.fund-facts__item--marker
+  display: block
+  font-size: 60px
+  line-height: 100%
+  color: $gold
+  background: $gr_gold
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  text-fill-color: transparent
+  margin-bottom: 100px
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 40px + (60 - 40) * ((100vw - 320px) / (1440 - 320)))
+  @include media-breakpoint-down(md)
+    margin-bottom: 60px
+
+.fund-facts__item--title
+  display: block
+  font-size: 18px
+  line-height: 110%
+  text-transform: uppercase
+  font-weight: 600
+  color: $gold
+  margin-bottom: 10px
+
+.fund-facts__item--descr
+  font-size: 13px
+  line-height: 16px
+  font-weight: 400
+  color: $gold

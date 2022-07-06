@@ -1,0 +1,26 @@
+.mobile-menu
+  text-align: center
+
+.mobile-menu__item
+  margin: 20px 0
+  @include media-breakpoint-down(sm)
+    margin: 10px
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+.mobile-menu__item--link
+  @media (any-hover: hover)
+    &:hover
+      .mobile-menu__item--title
+        color: #9f9191
+
+.mobile-menu__item--title
+  font-size: 24px
+  line-height: 30px
+  text-transform: uppercase
+  color: $gold
+  transition: color .3s ease-in-out
+  @include media-breakpoint-down(sm)
+    font-size: 16px

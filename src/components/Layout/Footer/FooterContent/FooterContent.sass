@@ -1,0 +1,20 @@
+@import './FooterMenu/FooterMenu'
+@import './FooterServices/FooterServices'
+@import './FooterContacts/FooterContacts'
+@import './FooterCharity/FooterCharity'
+@import './FooterNavSystem/FooterNavSystem'
+
+.footer-content
+  display: grid
+  grid-template-columns: 4fr 3fr 3fr 3fr
+  gap: 40px
+  padding-bottom: 60px
+  @include media-breakpoint-down(xl)
+    gap: 20px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 6fr 6fr
+    gap: 80px 40px
+  @include media-breakpoint-down(sm)
+    grid-template-columns: 1fr
+    gap: 40px  
+    text-align: center

@@ -11,7 +11,11 @@
 /////////////// Pages ////////////
 
 @import '../components/Pages/Home/Home'
-@import '../components/Pages/Case/Case'
+@import '../components/Pages/Fund/Fund'
+@import '../components/Pages/Price/Price'
+@import '../components/Pages/About/About'
+@import '../components/Pages/Services/Services'
+@import '../components/Pages/ServicesInner/ServicesInner'
 
 
 
@@ -69,35 +73,8 @@ a
 p, h1, h2, h3, h4,
   margin: 0
 
-.page-wrapper
-  width: 100%
-  padding: 0 40px
-  max-width: $page-wrapper
-  margin: 0 auto
-  @media screen and (max-width: 650px)
-    padding: 0 20px
-  // @include media-breakpoint-down(lg)
-  //   padding: 0 4%
 
-.section
-  padding-top: 150px  
-  padding-bottom: 150px
-  @media screen and ( max-width: $page-wrapper )
-    padding-top: calc( 30px + (150 - 30) * ((100vw - 320px) / (1200 - 320)))
-    padding-bottom: calc( 30px + (150 - 30) * ((100vw - 320px) / (1200 - 320)))
-
-
-.content-wrapper
-  width: 100%
-  max-width: 1920px
-  margin: 0 auto
-  padding: 0 11%
-  @include media-breakpoint-down(xl)
-    padding: 0 8%
-  @include media-breakpoint-down(lg)
-    padding: 0 11%
-  @include media-breakpoint-down(md)
-    padding: 0 6%
-
+.top-padding
+  padding-top: 100px
 
   

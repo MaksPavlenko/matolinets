@@ -1,0 +1,15 @@
+@import './FactItem/FactItem'
+
+.fund-facts__list
+  position: relative
+  padding: 160px 0
+  display: grid
+  grid-template-columns: 3fr 3fr 3fr 3fr
+  gap: 40px
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 40px + (160 - 40) * ((100vw - 320px) / (1440 - 320))) 0
+  @include media-breakpoint-down(xl)
+    grid-template-columns: 6fr 6fr 
+  @include media-breakpoint-down(md)
+    grid-template-columns: 1fr
+    gap: 20px

@@ -1,0 +1,21 @@
+.about-page__item
+  margin-bottom: 60px
+  &:last-child
+    margin-bottom: 0
+
+.about-page__item--title
+  font-size: 40px
+  line-height: 120%
+  font-weight: 500
+  margin-bottom: 20px
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 22px + (40 - 22) * ((100vw - 320px) / (1440 - 320)))
+
+.about-page__item--descr
+  p
+    font-size: 16px 
+    line-height: 130%
+    font-weight: 400
+    white-space: pre-wrap
+    @media screen and ( max-width: $page-wrapper )
+      font-size: calc( 14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)))

@@ -1,52 +1,27 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+// import { StaticQuery, graphql } from 'gatsby';
 import { Header, Footer } from './index';
 
-import { menuData, footerMenu } from '../../db/menuData';
+import { menuData, servicesFooterData } from '../../db/menuData';
+import { contactsData } from '../../db/contactsData';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, cls }) => {
   return (
-    <StaticQuery
-      query={graphql`
-        query HeadingQuery {
-          allContentfulFoterServices {
-            nodes {
-              titleEn
-              titleIt
-              titleRu
-              titleUa
-            }
-          }
-          contentfulContacts {
-            addressUa
-            addressEn
-            addressIt
-            addressRu
-            mail
-            phoneUa
-            phoneIt
-          }
-        }
-      `}
-      render={(data) => (
-        <div className="app-container">
-          <Header menu={menuData} />
-          <main>{children}</main>
-          <Footer
-            menu={footerMenu}
-            footerServices={data.allContentfulFoterServices.nodes}
-            contacts={data.contentfulContacts}
-          />
-        </div>
-      )}
-    />
+    <div className="app-container">
+      <Header cls={cls} menu={menuData} />
+      <main>{children}</main>
+      <Footer
+        menu={menuData}
+        services={servicesFooterData}
+        contacts={contactsData}
+      />
+    </div>
   );
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  contacts: PropTypes.object,
 };
 
 export default Layout;

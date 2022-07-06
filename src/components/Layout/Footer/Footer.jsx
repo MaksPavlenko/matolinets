@@ -1,28 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FooterLogo from './FooterLogo/FooterLogo';
-import FooterMenu from './FooterMenu/FooterMenu';
-import FooterServices from './FooterServices/FooterServices';
-import FooterContacts from './FooterContacts/FooterContacts';
 
-const Footer = ({ menu, footerServices, contacts }) => {
+import { ContentWrapper } from '../../Ui/InterfaceSystem/InterfaceSystem';
+import FooterBottom from './FooterBottom/FooterBottom';
+import FooterContent from './FooterContent/FooterContent';
+
+const Footer = ({ menu, services, contacts }) => {
   return (
     <footer className="footer" id="contacts">
-      <div className="page-wrapper">
-        <div className="footer-items">
-          <FooterLogo />
-          <FooterMenu menu={menu} />
-          <FooterServices services={footerServices} />
-          <FooterContacts contacts={contacts} />
-        </div>
-      </div>
+      <ContentWrapper>
+        <FooterContent menu={menu} services={services} contacts={contacts} />
+        <FooterBottom />
+      </ContentWrapper>
     </footer>
   );
 };
 
 Footer.propTypes = {
   menu: PropTypes.array,
-  footerServices: PropTypes.array,
+  services: PropTypes.array,
   contacts: PropTypes.object,
 };
 

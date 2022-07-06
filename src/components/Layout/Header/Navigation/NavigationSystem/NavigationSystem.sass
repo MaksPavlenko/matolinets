@@ -1,0 +1,29 @@
+.menu-item
+  display: inline-block
+  margin: 0 10px
+  @media screen and ( max-width: $page-wrapper )
+    margin: 0 calc( 5px + (10 - 5) * ((100vw - 320px) / (1440 - 320))) 
+  &:first-child
+    margin-left: 0
+  &:last-child
+    margin-right: 0
+
+.menu-item__title
+  display: block
+  font-size: 13px
+  line-height: 100%
+  font-weight: 400
+  text-transform: uppercase
+  color: $gold
+  transition: color .3s ease-in-out
+  transform: translateY(1px)
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 10px + (13 - 10) * ((100vw - 320px) / (1440 - 320))) 
+
+.menu-item__link
+  @media (any-hover: hover)
+    &:hover
+      .menu-item__title
+        color: #9f9191
+  
+    

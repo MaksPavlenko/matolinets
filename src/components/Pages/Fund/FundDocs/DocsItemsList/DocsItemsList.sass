@@ -1,0 +1,13 @@
+@import './DocsItem/DocsItem'
+
+.fund-docs__list
+  display: grid
+  grid-template-columns: repeat(4, 3fr)
+  gap: 40px
+  @include media-breakpoint-down(xl)
+    gap: 20px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 6fr 6fr
+    gap: 40px
+  @include media-breakpoint-down(sm)
+    gap: 20px

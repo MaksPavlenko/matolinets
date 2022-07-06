@@ -1,0 +1,11 @@
+@import './AboutItem/AboutItem'
+
+.fund-about__items
+  display: grid
+  grid-template-columns: 6fr 6fr
+  gap: 40px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 1fr
+    gap: 30px
+  @include media-breakpoint-down(sm)
+    gap: 20px

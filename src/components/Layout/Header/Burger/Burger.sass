@@ -1,29 +1,43 @@
 .burger
-  display: none
-  @media screen and (max-width: 1120px)
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    height: 50px
-    width: 50px
-    background: #000
-    text-align: center
-
-.burger__line
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  width: 60px
+  height: 60px
+  // background: red
   position: absolute
-  left: 14px
-  margin: 0 auto
-  width: 20px
-  height: 3px
-  vertical-align: middle
-  background: #fff
+  top: 50%
+  right: 0
+  transform: translateY(-50%)
+  
+.burger-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 30px
+  height: 30px
+  transition: all .3s ease-in-out
 
-.line-1
-  top: 18px
+.burger-line
+  display: block
+  width: 100%
+  height: 2px
+  background: $gold
+  transform-origin: 50% 50%
+  transition: all .3s ease-in-out
 
-.line-2
-  top: 24px
+.burger-line__2
+  margin-top: 8px
 
-.line-3
-  top: 30px
+//////// Open Style //////
+
+.burger-wrapper
+  &.is-open
+    .burger-line__1
+      transform: translate3d(0px, 4px, 1px) rotate(45deg)
+      height: 1px
+    .burger-line__2
+      transform: translate3d(0px, -5px, 1px) rotate(135deg)
+      height: 1px
+

@@ -1,0 +1,23 @@
+.main-content__wrapper
+  position: relative
+  text-align: center
+
+.main-content__title
+  font-size: 50px
+  line-height: 110%
+  font-weight: 400
+  text-transform: uppercase
+  white-space: pre-wrap
+  color: $gold
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 25px + (50 - 25) * ((100vw - 320px) / (1440 - 320))) 
+
+.main-content__descr
+  display: block
+  font-size: 16px
+  line-height: 110%
+  font-weight: 400
+  color: $gold
+  margin-bottom: 35px
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 14px + (16 - 14) * ((100vw - 320px) / (1440 - 320))) 
