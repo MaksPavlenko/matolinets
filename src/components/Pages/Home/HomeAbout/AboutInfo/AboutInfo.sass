@@ -1,0 +1,43 @@
+$pd_top: calc( 40px + (90 - 40) * ((100vw - 320px) / (1440 - 320)))
+  
+.home-about__info
+  padding: 90px 25% 90px 0
+  @media screen and ( max-width: $page-wrapper )
+    padding: $pd_top 25% $pd_top 0
+  @include media-breakpoint-down(lg)
+    padding: $pd_top 15% $pd_top 0
+  @include media-breakpoint-down(sm)
+    padding: $pd_top 0
+
+
+.home-about__info--content
+  padding-top: 120px
+  @media screen and ( max-width: $page-wrapper )
+    padding-top: calc( 40px + (120 - 40) * ((100vw - 320px) / (1440 - 320)))
+  @include media-breakpoint-down(lg)
+    padding-top: 30px
+
+
+.home-about__info--title
+  font-size: 34px
+  font-weight: 600
+  line-height: 120%
+  margin-bottom: 40px
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 18px + (34 - 18) * ((100vw - 320px) / (1440 - 320)))
+  @include media-breakpoint-down(lg)
+    margin-bottom: 30px
+
+.home-about__info--descr
+  font-size: 16px
+  line-height: 26px
+  font-weight: 400
+  margin-bottom: 40px
+  @include media-breakpoint-down(lg)
+    font-size: 14px
+    line-height: 24px
+
+.home-about__info-buuton
+  display: inline-block
+  .default-button
+    padding: 20px 50px

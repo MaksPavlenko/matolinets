@@ -1,0 +1,18 @@
+@import './HomeServicesList/HomeServicesList'
+  
+.home-services
+  position: relative
+
+.home-services__wrapper
+  .cover-default
+    &::after 
+      background: rgba($black, .9)
+
+
+.home-services__wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  padding: 90px 0
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 40px + (90 - 40) * ((100vw - 320px) / (1440 - 320))) 0

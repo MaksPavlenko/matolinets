@@ -1,0 +1,21 @@
+.section-marker__wrapper
+  position: relative
+  display: inline-block
+  padding: 10px 0
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 50%
+    height: 3px
+    background: $gold
+
+.section-marker
+  font-size: 22px
+  line-height: 120%
+  font-weight: 600
+  text-transform: uppercase
+  color: $gold  
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 16px + (22 - 16) * ((100vw - 320px) / (1440 - 320)))

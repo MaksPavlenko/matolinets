@@ -23,6 +23,7 @@ const ServicesItems = ({ servicesItems }) => {
               )}
               category={item.category}
               img={item.image}
+              icon={item.icon}
               key={index}
             />
           );
@@ -36,6 +37,7 @@ const ServicesItems = ({ servicesItems }) => {
                 item.title_ru
               )}
               img={item.image}
+              icon={item.icon}
               slug={item.slug}
               key={index}
             />

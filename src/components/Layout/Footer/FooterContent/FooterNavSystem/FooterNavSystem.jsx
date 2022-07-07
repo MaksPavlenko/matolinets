@@ -14,7 +14,7 @@ export const FooterNav = ({ children }) => {
 };
 
 export const FooterNavItem = ({ children }) => {
-  return <ul className="footer-nav__item">{children}</ul>;
+  return <li className="footer-nav__item">{children}</li>;
 };
 
 export const FooterNavLink = ({ link, title }) => {

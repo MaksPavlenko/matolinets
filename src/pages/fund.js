@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useLanguage } from '../hooks/useLanguage';
+// import { useLanguage } from '../hooks/useLanguage';
 import '../styles/styles.sass';
 
 import { fundData } from '../db/fundData';
@@ -34,20 +34,7 @@ const FundPage = () => {
 
   return (
     <Layout cls={'fund'}>
-      <Seo
-        title={useLanguage(
-          'nunox: маркетингове агентство: Київ, Україна. (uk)',
-          'nunox: marketing agency, Kyiv, Ukraine',
-          'nunox: agenzia di marketing: Kiev, Ucraina',
-          'nunox: маркетинговое агентство: Киев, Украина'
-        )}
-        description={useLanguage(
-          'Створюємо та розвиваємо бренди. Володіючи власними бізнесами ми пропонуємо підприємцям наш досвід.',
-          'We create and develop brands. By owning our own businesses, we offer entrepreneurs our experience.',
-          'Creiamo e sviluppiamo marchi. Possedendo le nostre attività, offriamo agli imprenditori la nostra esperienza.',
-          'Создаем и развиваем бренды. Владея собственными бизнесами, мы предлагаем предпринимателям наш опыт.'
-        )}
-      />
+      <Seo title={'Dr.Matolinets'} description={'Dr.Matolinets'} />
       <PageWrapper>
         <FundMain main={main} />
         <FundAbout about={about} />
