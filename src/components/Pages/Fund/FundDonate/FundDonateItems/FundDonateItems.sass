@@ -1,0 +1,16 @@
+@import './DonateQrcode/DonateQrcode'
+@import './DonateInfo/DonateInfo'
+@import './DonatePayment/DonatePayment'
+@import './DonateThank/DonateThank'
+
+.fund-donate__items
+  display: grid
+  // grid-template-columns: 4fr 8fr
+  grid-template-columns: repeat(3, 4fr)
+  // grid-template-rows: repeat(3, 4fr)
+  grid-template-areas: "a b b" "c c d"
+  gap: 40px
+
+.donate-item
+  background: $brown
+  padding: 40px

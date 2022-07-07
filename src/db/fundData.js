@@ -269,6 +269,26 @@ export const fundData = {
     title_de: 'Öffentliche Sammlung \nvon Spenden für wohltätige Zwecke',
     title_ru: 'Публичный сбор \nблаготворительных пожертвований',
     qr_code: '/image path/',
+    info: {
+      title_ua: 'Як Ви можете допомогти нам?',
+      title_en: 'How can you help us?',
+      title_de: 'Wie können Sie uns helfen?',
+      title_ru: 'Как вы можете помочь нам?',
+      description_ua:
+        'Ми збираємо кошти на медичні витрати, що підуть на операції по відновленню краси, зору, емоційного стану пацієнтів, а також життєво важливі програми для людей в України, які постраждали від війни. \n\nМи збираємо кошти на медичні витрати, що підуть на операції по відновленню краси, зору, емоційного стану пацієнтів, а також життєво важливі програми для людей в України, які постраждали від війни.',
+      description_en:
+        'We collect funds for medical expenses, which will go to operations to restore the beauty, vision, emotional state of patients, as well as vital programs for people in Ukraine who have suffered from the war. \n\nWe collect funds for medical expenses, which will go to operations to restore the beauty, vision, emotional state of patients, as well as vital programs for people in Ukraine who have suffered from the war.',
+      description_de:
+        'Wir sammeln Mittel für medizinische Ausgaben, die für Operationen zur Wiederherstellung der Schönheit, des Sehvermögens und des emotionalen Zustands der Patienten sowie für lebenswichtige Programme für Menschen in der Ukraine verwendet werden, die unter dem Krieg gelitten haben. \n\nWir sammeln Mittel für medizinische Ausgaben, die für Operationen zur Wiederherstellung der Schönheit, des Sehvermögens und des emotionalen Zustands der Patienten sowie für lebenswichtige Programme für Menschen in der Ukraine verwendet werden, die unter dem Krieg gelitten haben.',
+      description_ru:
+        'Мы собираем средства на медицинские расходы, которые пойдут на операции по восстановлению красоты, зрения, эмоционального состояния пациентов, а также жизненно важные программы для пострадавших от войны людей в Украине. \n\nМы собираем средства на медицинские расходы, которые пойдут на операции по восстановлению красоты, зрения, эмоционального состояния пациентов, а также жизненно важные программы для пострадавших от войны людей в Украине.',
+    },
+    thank: {
+      title_ua: 'Дякуємо що долучаєтесь  до благодійності!',
+      title_en: 'Thank you for joining the charity!',
+      title_de: 'Vielen Dank für den Beitritt!',
+      title_ru: 'Спасибо что присоединились к благотворительности!',
+    },
     items: [
       {
         id: 'tm0987612',
