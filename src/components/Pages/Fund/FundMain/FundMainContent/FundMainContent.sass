@@ -11,6 +11,8 @@
   color: $gold
   @media screen and ( max-width: $page-wrapper )
     font-size: calc( 25px + (50 - 25) * ((100vw - 320px) / (1440 - 320))) 
+  @include media-breakpoint-down(sm)
+    white-space: normal
 
 .main-content__descr
   display: block
