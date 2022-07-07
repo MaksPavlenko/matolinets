@@ -14,6 +14,8 @@ const ServicesInfoItem = ({ title, children }) => {
   );
 };
 
-ServicesInfoItem.propTypes = {};
+ServicesInfoItem.propTypes = {
+  title: PropTypes.string,
+};
 
 export default ServicesInfoItem;

@@ -1,3 +1,19 @@
 
 .donate-qrcode__wrapper
   grid-area: a
+  display: flex
+  align-items: center
+  justify-content: center
+  order: 1
+  @include media-breakpoint-down(md)
+    padding: 20% !important
+    order: 2
+
+.donate-qrcode__image--wrapper
+  width: 100%
+  height: auto
+
+.donate-qrcode__image
+  display: block
+  width: 100% !important
+  height: auto !important

@@ -1,2 +1,29 @@
 .donate-info__wrapper
   grid-area: b
+  order: 2
+  @include media-breakpoint-down(md)
+    order: 1
+
+.donate-info__title
+  font-size: 22px
+  line-height: 110%
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 20px
+  color: $gold
+  background: $gr_gold
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  text-fill-color: transparent
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 16px + (22 - 16) * ((100vw - 320px) / (1440 - 320)))
+
+.donate-info__descr
+  font-size: 15px
+  line-height: 140%
+  font-weight: 400
+  white-space: pre-wrap
+  color: $gold
+  @media screen and ( max-width: $page-wrapper )
+    font-size: calc( 12px + (15 - 12) * ((100vw - 320px) / (1440 - 320))) 

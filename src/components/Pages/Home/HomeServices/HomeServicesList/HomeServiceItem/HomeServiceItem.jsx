@@ -29,6 +29,9 @@ const HomeServiceItem = ({ link, title, icon }) => {
   );
 };
 
-HomeServiceItem.propTypes = {};
+HomeServiceItem.propTypes = {
+  link: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default HomeServiceItem;

@@ -8,7 +8,18 @@
   grid-template-columns: repeat(3, 4fr)
   grid-template-areas: "a b b" "c c d"
   gap: 40px
+  @include media-breakpoint-down(lg)
+    gap: 20px
+  @include media-breakpoint-down(md)
+    grid-template-columns: 1fr
+    grid-template-areas: none
 
 .donate-item
   background: $brown
-  padding: 40px
+  padding: 60px
+  @media screen and ( max-width: $page-wrapper )
+    padding: calc( 20px + (60 - 20) * ((100vw - 320px) / (1440 - 320))) 
+  @include media-breakpoint-down(lg)
+    padding: 30px
+  @include media-breakpoint-down(md)
+    grid-area: auto
