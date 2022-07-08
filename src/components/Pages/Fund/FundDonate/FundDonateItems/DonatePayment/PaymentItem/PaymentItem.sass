@@ -1,0 +1,71 @@
+.payment-item
+  margin-bottom: 20px
+  &:last-child
+    margin-bottom: 0
+  @include media-breakpoint-down(lg)
+    margin-bottom: 15px
+  
+.payment-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 10px
+
+.payment-header__marker
+  font-size: 12px
+  font-weight: 600
+  text-transform: uppercase
+  color: $gold
+
+.payment-header__icon
+  width: 20px
+  height: 20px
+  display: block
+  opacity: 0
+  transition: opacity .25s ease-in-out
+  // @include media-breakpoint-down(sm)
+  //   display: block
+  &.is-show
+    opacity: 1
+
+.payment-body
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-height: 60px
+  border: 1px solid $gold
+  
+
+.payment-body__text--wrapper
+  padding: 10px 20px
+  width: calc(100% - 64px)
+
+.payment-body__text
+  font-size: 13px
+  line-height: 16px
+  font-weight: 400
+  text-transform: uppercase
+  color: $gold
+  @include media-breakpoint-down(lg)
+    font-size: 12px
+    line-height: 15px
+
+.payment-body__button
+  height: 64px
+  width: 64px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-left: 1px solid $gold
+  cursor: pointer
+  @include media-breakpoint-down(lg)
+    width: 60px
+    height: 60px
+  svg
+    width: 24px
+    height: 24px
+    display: block
+    opacity: 1
+  @include media-breakpoint-down(sm)
+    display: none
+  

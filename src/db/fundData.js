@@ -1,10 +1,10 @@
 export const fundData = {
   main: {
     cover: '/image path/',
-    description_ua: 'Фонд Тараса Матолінця “Повернемо Красу”',
-    description_en: `Taras Matolinets Foundation "Let's Bring Back Beauty"`,
-    description_de: `Taras Matolinets Stiftung „Let’s Bring Back Beauty“`,
-    description_ru: 'Фонд Тараса Матолинца "Вернем Красоту',
+    description_ua: 'Фонд Тараса Матолінця «Повернемо Красу»',
+    description_en: `Taras Matolinets Foundation «Let’s Bring Back Beauty»`,
+    description_de: `Taras Matolinets Stiftung «Let’s Bring Back Beauty»`,
+    description_ru: 'Фонд Тараса Матолинца «Вернем Красоту»',
     title_ua: 'Допомагаємо повернути \nвтрачену красу внаслідок \nвоєнних дій',
     title_en:
       'We help to restore \nlost beauty as a result of \nmilitary operations',

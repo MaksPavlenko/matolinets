@@ -27,7 +27,7 @@ const FundDonateItems = ({ donate }) => {
       <DonateQrcode qr={data.qrCode.childImageSharp} />
       <DonateInfo info={donate.info} />
       <DonatePayment payItems={donate.items} />
-      <DonateThank />
+      <DonateThank thank={donate.thank} />
     </div>
   );
 };
