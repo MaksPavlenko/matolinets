@@ -1,4 +1,8 @@
 export const contactsData = {
+  title_ua: 'Контакти',
+  title_en: 'Contacts',
+  title_de: 'Kontakte',
+  title_ru: 'Контакты',
   phone: '+38 (098) 121-11-11',
   whatsapp: 'https://wa.me/+380981211111',
   viber: 'viber://chat?number=+380981211111',

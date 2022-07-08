@@ -1,0 +1,12 @@
+@import './ContactsMap/ContactsMap'
+@import './ContactsInfo/ContactsInfo'
+  
+.contacts-page
+  padding-top: 100px
+
+.contacts-wrapper
+  display: grid
+  grid-template-columns: 6fr 6fr
+  gap: 30px
+  @include media-breakpoint-down(lg)
+    grid-template-columns: 1fr
