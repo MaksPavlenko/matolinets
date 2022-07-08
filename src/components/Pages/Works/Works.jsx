@@ -40,10 +40,11 @@ const Works = ({ works }) => {
         />
         <div className="works-gallery">
           {works.items.map((item, index) => {
+            console.log(item);
             return (
               <WorksItem
                 key={index}
-                link={item.link}
+                link={item.slug}
                 title={langToggle(
                   item.title_ua,
                   item.title_en,
