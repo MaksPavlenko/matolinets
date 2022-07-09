@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import CloseIcon from '../../../svg/close.svg';
+import ArrowLeft from '../../../svg/arrow_left_sm.svg';
+import ArrowRight from '../../../svg/arrow_right_sm.svg';
 
 const LightBox = ({
   img,
@@ -56,7 +58,8 @@ const LightBox = ({
           onClick={goBack}
           disabled={selectedImage === 0}
         >
-          Prev
+          {/* Prev */}
+          <ArrowLeft />
         </button>
         <button
           className="light-box__arrow light-box__next"
@@ -64,7 +67,8 @@ const LightBox = ({
           onClick={goForward}
           disabled={selectedImage === images.length - 1}
         >
-          Next
+          {/* Next */}
+          <ArrowRight />
         </button>
       </div>
     </section>
