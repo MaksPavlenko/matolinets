@@ -61,10 +61,7 @@ export const caseInner = {
     { img: '/..../' },
   ],
   video: [
-    { link: '/..../' },
-    { link: '/..../' },
-    { link: '/..../' },
-    { link: '/..../' },
-    { link: '/..../' },
+    { link: 'https://www.youtube.com/watch?v=Fn5jvjy9wBg' },
+    { link: 'https://www.youtube.com/watch?v=Fn5jvjy9wBg' },
   ],
 };
