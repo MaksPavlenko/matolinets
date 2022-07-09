@@ -14,7 +14,7 @@ import { caseInner } from '../db/caseInner';
 
 const CasePage = () => {
   return (
-    <Layout>
+    <Layout cls={'case'}>
       <Seo title={'Dr.Matolinets'} description={'Dr.Matolinets'} />
       <PageWrapper>
         <CaseTemplate caseData={caseInner} />

@@ -41,6 +41,8 @@ const Header = ({ cls, menu }) => {
         className={
           cls === 'fund'
             ? `header header-fund ${activeHeader ? 'is-active' : ''}`
+            : cls === 'case'
+            ? 'header'
             : 'header'
         }
       >
@@ -51,6 +53,12 @@ const Header = ({ cls, menu }) => {
             </MediaQuery>
             {cls === 'fund' ? (
               <HeaderLogoFund open={open} activeHeader={activeHeader} />
+            ) : cls === 'case' ? (
+              <HeaderLogoFund
+                open={open}
+                activeHeader={activeHeader}
+                cls={'case'}
+              />
             ) : (
               <HeaderLogo open={open} />
             )}

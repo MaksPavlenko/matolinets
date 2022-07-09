@@ -10,15 +10,19 @@ export const HeaderLogo = ({ open }) => (
   </Link>
 );
 
-export const HeaderLogoFund = ({ open, activeHeader }) => (
+export const HeaderLogoFund = ({ open, activeHeader, cls }) => (
   <Link
-    to="/"
+    to="/fund/"
     className={
       open ? 'logo-link logo-link__fund is-hide' : 'logo-link__fund logo-link'
     }
   >
     <LogoFund
-      className={activeHeader ? 'logo logo-fund is-active' : 'logo logo-fund'}
+      className={
+        activeHeader
+          ? `logo ${cls ? cls : 'logo-fund'} is-active`
+          : `logo ${cls ? cls : 'logo-fund'}`
+      }
     />
   </Link>
 );
