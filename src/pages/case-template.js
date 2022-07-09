@@ -6,16 +6,19 @@ import '../styles/styles.sass';
 import Layout from '../components/Layout/layout';
 import Seo from '../components/seo';
 import { PageWrapper } from '../components/Ui/InterfaceSystem/InterfaceSystem';
-import Works from '../components/Pages/Works/Works';
+import CaseTemplate from '../components/Pages/CaseTemplate/CaseTemplate';
+import { FundDonate } from '../components/Pages/Fund';
 
-import { workData } from '../db/worksData';
+import { fundData } from '../db/fundData';
+import { caseInner } from '../db/caseInner';
 
 const CasePage = () => {
   return (
     <Layout>
       <Seo title={'Dr.Matolinets'} description={'Dr.Matolinets'} />
       <PageWrapper>
-        <Works works={workData} />
+        <CaseTemplate caseData={caseInner} />
+        <FundDonate donate={fundData.donate} />
       </PageWrapper>
     </Layout>
   );
