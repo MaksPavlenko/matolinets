@@ -15,7 +15,7 @@ const PhoneInfo = ({ info }) => {
           )}
         </h3>
         <a
-          href={`tel:+30` + info.phone.toString().replace(/[- )(]/g, '')}
+          href={`tel:` + info.phone.toString().replace(/[- )(]/g, '')}
           className="fund-phone__info--link"
         >
           {info.phone}

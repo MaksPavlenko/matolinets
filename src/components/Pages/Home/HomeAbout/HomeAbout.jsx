@@ -1,26 +1,13 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { useLanguage } from '../../../../hooks/useLanguage';
 import PropTypes from 'prop-types';
 import AboutInfo from './AboutInfo/AboutInfo';
 
 const HomeAbout = ({ about }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      aboutImage: file(relativePath: { eq: "team_01.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            breakpoints: [576, 768, 992, 1200, 1920]
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-    }
-  `);
-  const image = getImage(data.aboutImage.childImageSharp);
+
+  const image = getImage(about.image.localFile);
+
   return (
     <section className="home-about">
       <AboutInfo about={about} />

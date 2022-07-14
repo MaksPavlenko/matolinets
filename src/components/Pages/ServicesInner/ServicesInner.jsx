@@ -36,10 +36,10 @@ const ServicesInner = ({ service, whatsApp }) => {
       <ContentWrapper>
         <SectionHeaderMain
           title={useLanguage(
-            service.title_ua,
-            service.title_en,
-            service.title_de,
-            service.title_ru
+            service.main.title_ua,
+            service.main.title_en,
+            service.main.title_de,
+            service.main.title_ru
           )}
         />
         <StikyGrid>
@@ -58,7 +58,7 @@ const ServicesInner = ({ service, whatsApp }) => {
             </AsideDefault>
           </StikyGridColumn>
           <StikyGridColumn>
-            <ServicesInfo info={'op'} whatsApp={whatsApp} />
+            <ServicesInfo info={service} whatsApp={whatsApp} />
           </StikyGridColumn>
         </StikyGrid>
       </ContentWrapper>

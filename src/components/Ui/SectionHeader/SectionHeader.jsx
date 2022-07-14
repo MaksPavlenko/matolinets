@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Markdown from 'react-markdown'
 
 const SectionHeader = ({ title }) => {
   return (
     <header className="section-header">
-      <h2 className="h2 section-title">{title}</h2>
+      <Markdown className="h2 section-title">{title}</Markdown>
     </header>
   );
 };

@@ -8,14 +8,13 @@ import Seo from '../components/seo';
 import { PageWrapper } from '../components/Ui/InterfaceSystem/InterfaceSystem';
 import Works from '../components/Pages/Works/Works';
 
-import { workData } from '../db/worksData';
 
-const WorksPage = () => {
+const WorksPage = ({data}) => {
   return (
     <Layout>
       <Seo title={'Dr.Matolinets'} description={'Dr.Matolinets'} />
       <PageWrapper>
-        <Works works={workData} />
+        <Works works={data.allStrapiWorks.nodes} />
       </PageWrapper>
     </Layout>
   );
@@ -24,7 +23,29 @@ const WorksPage = () => {
 export default WorksPage;
 
 export const query = graphql`
-  query($language: String!) {
+  query Category($language: String!) {
+    allStrapiWorks {
+      nodes {
+        slug
+        title_ua
+        title_ru
+        title_en
+        title_de
+        gallery {
+          img {
+            localFile  {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  layout: FULL_WIDTH
+                )
+              }
+            }
+          }
+        }
+  }
+  }
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {

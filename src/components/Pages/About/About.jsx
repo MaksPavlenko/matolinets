@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useLanguage } from '../../../hooks/useLanguage';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import {
   ContentWrapper,
@@ -14,21 +13,7 @@ import AboutAside from './AboutAside/AboutAside';
 import AboutItems from './AboutItems/AboutItems';
 import AsideDefault from '../../Ui/AsideDefault/AsideDefault';
 
-const About = ({ about, whatsApp }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      aboutCover: file(relativePath: { eq: "team_01.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            breakpoints: [576, 768, 992, 1200, 1920]
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-    }
-  `);
+const About = ({ abouts, whatsApp }) => {
 
   return (
     <SectionDefault classes={'about-page'}>
@@ -45,13 +30,13 @@ const About = ({ about, whatsApp }) => {
           <StikyGridColumn>
             <AsideDefault offsetTop={140}>
               <AboutAside
-                img={data.aboutCover.childImageSharp}
+                img={abouts.doctor.image.localFile}
                 whatsApp={whatsApp}
               />
             </AsideDefault>
           </StikyGridColumn>
           <StikyGridColumn>
-            <AboutItems about={about} whatsApp={whatsApp} />
+            <AboutItems abouts={abouts} whatsApp={whatsApp} />
           </StikyGridColumn>
         </StikyGrid>
       </ContentWrapper>

@@ -2,167 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import { useLanguage } from '../../../../hooks/useLanguage';
-
+import ReactMarkdown from 'react-markdown';
 import { DefaultButtonLink } from '../../../Ui/ButtonsDefault/ButtonsDefault';
 import ServicesInfoItem from './ServicesInfoItem/ServicesInfoItem';
 
-const ServicesInfo = ({ whatsApp }) => {
+const ServicesInfo = ({ info, whatsApp }) => {
+  const langToggle = useLanguage;
+
   return (
     <div className="services-info__items">
-      <ServicesInfoItem title={'Про послугу:'}>
-        <div className="service-inner__mark">
-          <p>
-            Увеличение груди (эндопротезирование груди) - эстетическая операция
-            по изменению формы и размера молочных желез. Среди всех видов
-            маммопластики эндопротезирование (увеличение имплантами) – самая
-            распространенная коррекция, позволяющая не только восполнить
-            недостающий объем, но и устранить асимметрию, незначительный птоз, а
-            также усовершенствовать очертания желез.
-          </p>
-          <p>
-            <strong>Показания к маммопластике:</strong>
-          </p>
-          <ul>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-            <li>
-              <p>Асимметрия молочных желез</p>
-            </li>
-            <li>
-              <p>Резкое снижение массы тела.</p>
-            </li>
-            <li>
-              <p>Послеродовые изменения.</p>
-            </li>
-            <li>
-              <p>Состояние после мастэктомии.</p>
-            </li>
-          </ul>
-        </div>
+      <ServicesInfoItem
+        title={langToggle(
+          'Про послугу:',
+          'About the service:',
+          'Über den Dienst',
+          'Об услуге:'
+        )}
+      >
+        <ReactMarkdown className="service-inner__mark">
+          {langToggle(
+            info.main.description_ua,
+            info.main.description_en,
+            info.main.description_de,
+            info.main.description_ru
+          )}
+        </ReactMarkdown>
       </ServicesInfoItem>
-      <ServicesInfoItem title={'Противопоказания:'}>
-        <div className="service-inner__mark">
-          <p>
-            <strong>Абсолютные:</strong>
-          </p>
-          <ul>
-            <li>
-              <p>Аутоиммунные заболевания</p>
-            </li>
-            <li>
-              <p>Болезни сердечно-сосудистой системы, печени, почек</p>
-            </li>
-            <li>
-              <p>Аллергическая реакция на препараты анестезии</p>
-            </li>
-            <li>
-              <p>Онкология</p>
-            </li>
-            <li>
-              <p>Проблемы свертываемости крови Временные</p>
-            </li>
-            <li>
-              <p>Инфекционные заболевания в стадии обострения</p>
-            </li>
-            <li>
-              <p>
-                Хронические заболевания в острой фазе Беременность, лактация
-              </p>
-            </li>
-            <li>
-              <p>Венерические заболевания</p>
-            </li>
-            <li>
-              <p>Гормональные нарушения</p>
-            </li>
-            <li>
-              <p>
-                Менструация Операция по увеличению груди занимает около часа
-                времени, а современные способы наложения швов делают их
-                впоследствии практически незаметными!
-              </p>
-            </li>
-          </ul>
-          <p>
-            <strong>
-              Существует ряд рекомендаций, следуя которым пациент оградит себя
-              от нежелательных осложнений в момент операции:
-            </strong>
-          </p>
-          <ol>
-            <li>
-              <p>Отказаться от алкоголя и курения за 2 недели до пластики;</p>
-            </li>
-            <li>
-              <p>
-                При приеме антикоагулянтов отменить их прием за неделю. Способ
-                (место) установки импланта Имплант может быть установлен в
-                разных слоях тканей груди. Выбор методики зависит от состояния
-                тканей пациентки и ее образа жизни. Существует три варианта
-                размещения эндопротеза:
-              </p>
-            </li>
-            <li>
-              <p>
-                Под молочной железой: данный способ, по мнению некоторых
-                хирургов, позволяет создать очень красивую форму груди.
-              </p>
-            </li>
-            <li>
-              <p>
-                Под большой грудной мышцей: установка под мышечный слой создает
-                эффект амортизации, грудь отличается мягкостью, а также
-                отмечается более низкий риск возникновения капсулярной
-                контрактуры.
-              </p>
-            </li>
-            <li>
-              <p>
-                В двух плоскостях (верх под мышцей, низ под железой): данный
-                способ объединил в себе преимущества обоих подходов.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </ServicesInfoItem>
-      <ServicesInfoItem>
-        <div className="service-inner__mark">
-          <p>
-            Увеличение груди (эндопротезирование груди) - эстетическая операция
-            по изменению формы и размера молочных желез. Среди всех видов
-            маммопластики эндопротезирование (увеличение имплантами) – самая
-            распространенная коррекция, позволяющая не только восполнить
-            недостающий объем, но и устранить асимметрию, незначительный птоз, а
-            также усовершенствовать очертания желез.
-          </p>
-          <p>
-            <strong>Показания к маммопластике:</strong>
-          </p>
-          <ul>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-            <li>
-              <p>Врожденное недоразвитие молочных желез или микромастия.</p>
-            </li>
-          </ul>
-        </div>
-      </ServicesInfoItem>
+      {info.about_services.map((item, i) => {
+        return (
+          <ServicesInfoItem
+            title={langToggle(
+              item.title_ua,
+              item.title_en,
+              item.title_de,
+              item.title_ru
+            )}
+            key={i}
+          >
+            <ReactMarkdown className="service-inner__mark">
+              {langToggle(
+                item.description_ua,
+                item.description_en,
+                item.description_de,
+                item.description_ru
+              )}
+            </ReactMarkdown>
+          </ServicesInfoItem>
+        );
+      })}
 
       <MediaQuery maxWidth={991}>
         <div className="service-page__button--mobile">
           <DefaultButtonLink
-            title={useLanguage(
+            title={langToggle(
               'Записатись на консультацію',
               'Sign up for a consultation',
               'Melden Sie sich für eine Beratung an',

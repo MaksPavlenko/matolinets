@@ -8,17 +8,15 @@ import Seo from '../components/seo';
 import { PageWrapper } from '../components/Ui/InterfaceSystem/InterfaceSystem';
 import About from '../components/Pages/About/About';
 
-import { aboutData } from '../db/aboutData';
-import { contactsData } from '../db/contactsData';
+// import { aboutData } from '../db/aboutData';
 
-const AboutPage = () => {
-  console.log(aboutData);
+const AboutPage = ({data}) => {
 
   return (
     <Layout>
       <Seo title={'Dr.Matolinets'} description={'Dr.Matolinets'} />
       <PageWrapper>
-        <About about={aboutData} whatsApp={contactsData.whatsapp} />
+        <About abouts={data.strapiAboutDoctor} whatsApp={data.strapiContacts.whatsapp} />
       </PageWrapper>
     </Layout>
   );
@@ -27,7 +25,53 @@ const AboutPage = () => {
 export default AboutPage;
 
 export const query = graphql`
-  query($language: String!) {
+  query AboutDoctor ($language: String!) {
+    strapiAboutDoctor {
+      doctor {
+        title_ua
+        title_ru
+        title_en
+        title_de
+        description_ua
+        description_ru
+        description_en
+        description_de
+        image {
+          localFile{
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+              )
+            }
+          }
+        }
+      }
+      about {
+        title_ua
+        title_ru
+        title_en
+        title_de
+        description_ua
+        description_ru
+        description_en
+        description_de
+      }
+      certificates {
+        title_ua
+        title_ru
+        title_en
+        title_de
+        description_ua
+        description_ru
+        description_en
+        description_de
+      }
+    }
+    strapiContacts {
+      whatsapp
+    }
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {

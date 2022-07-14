@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown'
 import { useLanguage } from '../../../../hooks/useLanguage';
 
 import CaseInfoItem from './CaseInfoItem/CaseInfoItem';
@@ -15,12 +16,14 @@ const CaseInfo = ({ caseData }) => {
           caseData.title_ru
         )}
       >
-        <div className="service-inner__mark">
-          <p>
-            Потрапила під обстріл під час виїзду із Запорізької області. Кульові
-            та безліч осколкових поранень.
-          </p>
-        </div>
+         <ReactMarkdown className="service-inner__mark">
+          {useLanguage(
+            caseData.story.description_ua,
+            caseData.story.description_en,
+            caseData.story.description_de,
+            caseData.story.description_ru
+          )}
+          </ReactMarkdown>
       </CaseInfoItem>
       <CaseInfoItem
         title={useLanguage(
@@ -30,46 +33,15 @@ const CaseInfo = ({ caseData }) => {
           caseData.problem.title_ru
         )}
       >
-        <div className="service-inner__mark">
-          <ul>
-            <li>
-              <p>Аутоиммунные заболевания</p>
-            </li>
-            <li>
-              <p>Болезни сердечно-сосудистой системы, печени, почек</p>
-            </li>
-            <li>
-              <p>Аллергическая реакция на препараты анестезии</p>
-            </li>
-            <li>
-              <p>Онкология</p>
-            </li>
-            <li>
-              <p>Проблемы свертываемости крови Временные</p>
-            </li>
-            <li>
-              <p>Инфекционные заболевания в стадии обострения</p>
-            </li>
-            <li>
-              <p>
-                Хронические заболевания в острой фазе Беременность, лактация
-              </p>
-            </li>
-            <li>
-              <p>Венерические заболевания</p>
-            </li>
-            <li>
-              <p>Гормональные нарушения</p>
-            </li>
-            <li>
-              <p>
-                Менструация Операция по увеличению груди занимает около часа
-                времени, а современные способы наложения швов делают их
-                впоследствии практически незаметными!
-              </p>
-            </li>
-          </ul>
-        </div>
+          <ReactMarkdown className="service-inner__mark">
+            {useLanguage(
+              caseData.problem.description_ua,
+              caseData.problem.description_en,
+              caseData.problem.description_de,
+              caseData.problem.description_ru
+            )}
+          </ReactMarkdown>
+          
       </CaseInfoItem>
       <CaseInfoItem
         title={useLanguage(
@@ -79,7 +51,15 @@ const CaseInfo = ({ caseData }) => {
           caseData.done.title_ru
         )}
       >
-        <div className="service-inner__mark">
+         <ReactMarkdown className="service-inner__mark">
+            {useLanguage(
+              caseData.done.description_ua,
+              caseData.done.description_en,
+              caseData.done.description_de,
+              caseData.done.description_ru
+            )}
+          </ReactMarkdown>
+        {/* <div className="service-inner__mark">
           <ol>
             <li>
               <p>Отказаться от алкоголя и курения за 2 недели до пластики;</p>
@@ -114,7 +94,7 @@ const CaseInfo = ({ caseData }) => {
               </p>
             </li>
           </ol>
-        </div>
+        </div> */}
       </CaseInfoItem>
     </div>
   );

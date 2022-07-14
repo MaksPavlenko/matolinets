@@ -1,16 +1,11 @@
 const { languages, defaultLanguage } = require('./languages');
 
-// require('dotenv').config();
-// require('dotenv').config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// });
-
 module.exports = {
   siteMetadata: {
-    title: `Nunox`,
+    title: `Matolinets`,
     description: `Створюємо та розвиваємо бренди. Володіючи власними бізнесами ми пропонуємо підприємцям наш досвід.`,
     author: `@nunox`,
-    siteUrl: `https://www.nunox.co`,
+    siteUrl: `https://matolinets.com`,
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -88,7 +83,7 @@ module.exports = {
         languages: [`ua`, `en`, `de`, `ru`],
         defaultLanguage: `ua`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://www.nunox.co`,
+        siteUrl: `https://www.matolinets.com`,
         // you can pass any i18next options
         i18nextOptions: {
           interpolation: {
@@ -171,6 +166,22 @@ module.exports = {
         rule: {
           include: /svg/, // See below to configure properly
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        // apiURL: process.env.STRAPI_API_URL || '*http://localhost:1337/admin/content-manager/collectionType/api::*',
+        apiURL: 'https://admin.matolinets.com',
+
+        collectionTypes: [`services`, `cases`, `works`, `categories`],
+        singleTypes: [
+          `home-page`,
+          `contacts`,
+          `about-doctor`,
+          `prices`,
+          `funds`,
+        ],
       },
     },
 

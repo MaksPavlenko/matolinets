@@ -6,7 +6,7 @@ export const servicesData = {
   slug: '/services/',
   items: [
     {
-      slug: '/services-inner/',
+      slug: '/services/mammoplasty/',
       image: '../../../../../svg/mam.svg',
       icon: 'mammoplasty',
       title_ua: 'Мамопластика',
@@ -15,7 +15,7 @@ export const servicesData = {
       title_ru: 'Маммопластика',
     },
     {
-      slug: '/services-inner/',
+      slug: '/services/rhinoplasty/',
       image: '../../../../../svg/rin.svg',
       icon: 'rhinoplasty',
       title_ua: 'Ринопластика',
@@ -24,7 +24,7 @@ export const servicesData = {
       title_ru: 'Ринопластика',
     },
     {
-      slug: '/services-inner/',
+      slug: '/services/liposuction/',
       image: '../../../../../svg/lip.svg',
       icon: 'liposuction',
       title_ua: 'Ліпосакція',
@@ -33,7 +33,7 @@ export const servicesData = {
       title_ru: 'Липосакция',
     },
     {
-      slug: '/services/',
+      slug: '/services',
       image: '../../../../../svg/fac.svg',
       icon: 'facial',
       title_ua: 'Хірургія обличчя',
@@ -42,35 +42,35 @@ export const servicesData = {
       title_ru: 'Хирургия лица',
       category: [
         {
-          slug: '/services-inner/',
+          slug: '/services/lumps-of-bisha/',
           title_ua: 'Комки Біша',
           title_en: 'Lumps of Bish',
           title_de: 'Klumpen von Bish',
           title_ru: 'Комки Биша',
         },
         {
-          slug: '/services-inner/',
+          slug: '/services/upper-blepharoplasty/',
           title_ua: 'Верхня Блефаропластика',
           title_en: 'Upper Blepharoplasty',
           title_de: 'Obere Blepharoplastik',
           title_ru: 'Верхняя Блефаропластика',
         },
         {
-          slug: '/services-inner/',
+          slug: '/services/lower-blepharoplasty/',
           title_ua: 'Нижня Блефаропластика',
           title_en: 'Lower Blepharoplasty',
           title_de: 'Untere Blepharoplastik',
           title_ru: 'Нижняя Блефаропластика',
         },
         {
-          slug: '/services-inner/',
+          slug: '/services/otoplasty/',
           title_ua: 'Отопластика',
           title_en: 'Otoplasty',
           title_de: 'Otoplastik',
           title_ru: 'Отопластика',
         },
         {
-          slug: '/services-inner/',
+          slug: '/services/bulhorn/',
           title_ua: 'Булхорн',
           title_en: 'Bulhorn',
           title_de: 'Bulhorn',

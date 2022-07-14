@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../../../hooks/useLanguage';
-import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
   ContentWrapper,
@@ -16,21 +15,6 @@ import CaseInnerGallery from './CaseInnerGallery/CaseInnerGallery';
 import CaseInnerVideo from './CaseInnerVideo/CaseInnerVideo';
 
 const CaseTemplate = ({ caseData }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      caseCover: file(relativePath: { eq: "case_cover_01.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            breakpoints: [576, 768, 992, 1200, 1920]
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-    }
-  `);
-
   return (
     <SectionDefault classes={'case-inner__page'}>
       <ContentWrapper>
@@ -45,7 +29,7 @@ const CaseTemplate = ({ caseData }) => {
         <StikyGrid>
           <StikyGridColumn>
             <AsideDefault offsetTop={140}>
-              <CaseAside img={data.caseCover.childImageSharp} />
+              <CaseAside img={caseData.cover.localFile} />
             </AsideDefault>
           </StikyGridColumn>
           <StikyGridColumn>

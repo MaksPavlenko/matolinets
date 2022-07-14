@@ -22,38 +22,33 @@ const PriceItems = ({ items }) => {
         <SectionHeaderMain
           title={langToggle('Прайс', 'Price', 'Preis', 'Прайс')}
         />
-        {items.map((cat, index) => {
-          if (cat.accent === true) {
-            return (
-              <PriceList key={index}>
+        {items.price.map((cat, index) => {
+           return (
+            <PriceCategory
+              title={langToggle(
+                cat.title_ua,
+                cat.title_en,
+                cat.title_de,
+                cat.title_ru
+              )}
+              key={index}
+            >
+              <PriceItem items={cat.items} />
+            </PriceCategory>
+          );
+        })}
+         <PriceList>
                 <PriceListItem
                   title={langToggle(
-                    cat.title_ua,
-                    cat.title_en,
-                    cat.title_de,
-                    cat.title_ru
+                    items.title_ua,
+                    items.title_en,
+                    items.title_de,
+                    items.title_ru
                   )}
-                  price={cat.price}
-                  accent={cat.accent}
+                  price={items.prices}
+                  accent={items.accent}
                 />
               </PriceList>
-            );
-          } else {
-            return (
-              <PriceCategory
-                title={langToggle(
-                  cat.title_ua,
-                  cat.title_en,
-                  cat.title_de,
-                  cat.title_ru
-                )}
-                key={index}
-              >
-                <PriceItem items={cat.items} />
-              </PriceCategory>
-            );
-          }
-        })}
       </ContentWrapper>
     </SectionDefault>
   );

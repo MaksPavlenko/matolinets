@@ -1,25 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { useLanguage } from '../../../../../../hooks/useLanguage';
 
 const TeamItem = ({ item }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      fundTemItem: file(relativePath: { eq: "team_01.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            breakpoints: [576, 768, 992, 1200, 1920]
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-    }
-  `);
-  const image = getImage(data.fundTemItem.childImageSharp);
+
+  const image = getImage(item.cover.localFile);
   return (
     <article className="fund-team__item">
       <div className="team-item__image--wrapper">

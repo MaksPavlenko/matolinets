@@ -6,8 +6,10 @@ import { useLanguage } from '../../../../hooks/useLanguage';
 import AboutItem from './AboutItem/AboutItem';
 import { DefaultButtonLink } from '../../../Ui/ButtonsDefault/ButtonsDefault';
 
-const AboutItems = ({ about, whatsApp }) => {
-  const { doctor, about: aboutInfo, certificates } = about;
+const AboutItems = ({ abouts, whatsApp }) => {
+  const { doctor, about, certificates } = abouts;
+
+  console.log(abouts);
 
   return (
     <div className="about-page__items">
@@ -27,16 +29,16 @@ const AboutItems = ({ about, whatsApp }) => {
       />
       <AboutItem
         title={useLanguage(
-          aboutInfo.title_ua,
-          aboutInfo.title_en,
-          aboutInfo.title_de,
-          aboutInfo.title_ru
+          about.title_ua,
+          about.title_en,
+          about.title_de,
+          about.title_ru
         )}
         description={useLanguage(
-          aboutInfo.description_ua,
-          aboutInfo.description_en,
-          aboutInfo.description_de,
-          aboutInfo.description_ru
+          about.description_ua,
+          about.description_en,
+          about.description_de,
+          about.description_ru
         )}
       />
       <AboutItem

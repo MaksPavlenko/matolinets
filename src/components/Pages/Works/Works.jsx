@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useLanguage } from '../../../hooks/useLanguage';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import {
   ContentWrapper,
@@ -11,47 +10,26 @@ import SectionHeaderMain from '../../Ui/SectionHeaderMain/SectionHeaderMain';
 import WorksItem from './WorksItem/WorksItem';
 
 const Works = ({ works }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      workImage: file(relativePath: { eq: "works.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            breakpoints: [576, 768, 992, 1200, 1920]
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-    }
-  `);
-
   const langToggle = useLanguage;
   return (
     <SectionDefault classes={'works-page'}>
       <ContentWrapper>
         <SectionHeaderMain
-          title={langToggle(
-            works.title_ua,
-            works.title_en,
-            works.title_de,
-            works.title_ru
-          )}
+          title={langToggle('Роботи', 'Works', 'Arbeit', 'Работы')}
         />
         <div className="works-gallery">
-          {works.items.map((item, index) => {
-            console.log(item);
+          {works.map((item, index) => {
             return (
               <WorksItem
                 key={index}
-                link={item.slug}
+                link={`${item.slug}/`}
                 title={langToggle(
                   item.title_ua,
                   item.title_en,
                   item.title_de,
                   item.title_ru
                 )}
-                img={data.workImage.childImageSharp}
+                img={item?.gallery?.[0].img.localFile}
               />
             );
           })}
@@ -62,7 +40,7 @@ const Works = ({ works }) => {
 };
 
 Works.propTypes = {
-  works: PropTypes.object,
+  works: PropTypes.array,
 };
 
 export default Works;
